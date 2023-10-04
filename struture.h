@@ -1,17 +1,6 @@
 #pragma once
 #include <string>
-
-
-struct Card
-{
-	std::string suits;
-	std::string ranks;
-};
-
-void TimerStarGame();
-void StarGame();
-void Blend();
-
+#include <vector>
 
 
 enum Rank
@@ -25,10 +14,10 @@ enum Rank
 	eight = 8,
 	nine = 9,
 	ten = 10,
-	eleven = 11,
-	twelve = 12,
-	thirteen = 13,
-	fourteen = 14,
+	jack = 11,
+	Queen = 12,
+	king = 13,
+	Ace = 14,
 };
 
 enum Color
@@ -38,3 +27,18 @@ enum Color
 	heart,
 	diamond,
 };
+struct Card
+{
+	Rank rank;
+	Color color;
+};
+
+void TimerStarGame();
+void StarGame();
+void Blend();
+Card DrawCard();
+
+extern std::vector<Card> handPlayer;
+extern std::vector<Card> handBot;
+extern std::vector<Card> handTable;
+extern std::vector<Card> DeckCard;
