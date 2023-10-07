@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 
+#include "HandValue.h"
+
 
 enum Rank
 {
@@ -33,6 +35,23 @@ struct Card
 	Color color;
 };
 
+enum Handvalue
+{
+	HighCard,
+	Pair,
+	TwoPair,
+	ThreeOfAKind,
+	Straight,
+	Flush,
+	Fullhouse,
+	Four_of_a_kind,
+	StraightFlush,
+	Royal_flush,
+};
+
+
+Handvalue Evaluate(const std::vector<Card>& _hand);
+
 void TimerStarGame();
 void StarGame();
 void Blend();
@@ -42,3 +61,9 @@ extern std::vector<Card> handPlayer;
 extern std::vector<Card> handBot;
 extern std::vector<Card> handTable;
 extern std::vector<Card> DeckCard;
+extern std::vector<Card> _handcalcul;
+
+bool HasHighCard(const std::vector<Card>& _handcalcul);
+bool HasPair(const std::vector<Card>& _handcalcul);
+
+

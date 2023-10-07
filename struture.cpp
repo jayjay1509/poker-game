@@ -2,8 +2,11 @@
 
 #include <algorithm>
 #include <iostream>
+#include <map>
 #include <thread>
 #include <vector>
+
+#include "HandValue.h"
 
 void TimerStarGame()
 {
@@ -99,3 +102,49 @@ void Blend()
 	std::srand(std::time(0));
 	std::random_shuffle(DeckCard.begin(), DeckCard.end());
 }
+
+
+
+Handvalue Evaluate(const std::vector<Card>& _hand)
+{
+	std::vector<Card> _handcalcul;
+
+	for (auto n : _hand)
+	{
+		_handcalcul.emplace_back(n);
+	}
+	for (auto c : handTable)
+	{
+		_handcalcul.emplace_back(c);
+	}
+	HasPair(_handcalcul);
+	return TwoPair;
+}
+
+std::map<Rank,int> RankOccurence(const std::vector<Card>& _handcalcul)
+{
+	std::map<Rank, int> rank_occurences;
+
+	for (auto c : _handcalcul)
+	{
+		if (rank_occurences.find(c.rank) == rank_occurences.end())
+		{
+			rank_occurences[c.rank] = 1;
+		}
+		else
+		{
+			rank_occurences[c.rank]++;
+		}
+
+	}
+	return rank_occurences;
+}
+
+bool HasPair(const std::vector<Card>& _handcalcul)
+{
+	const std::map<Rank, int> occurences = RankOccurence(_handcalcul);
+	for (auto c : RankOccurence())
+
+}
+
+//std::map<Rank, int>RankOccurences(const std::vector<Card>& hand);

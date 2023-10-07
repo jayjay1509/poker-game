@@ -131,6 +131,7 @@
     <ClCompile Include="struture.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="HandValue.h" />
     <ClInclude Include="struture.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

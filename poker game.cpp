@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <iostream>
+#include <map>
 #include <vector>
 #include <print>
 #include <thread>
@@ -11,6 +12,8 @@
  std::vector<Card> handBot;
  std::vector<Card> handTable;
  std::vector<Card> DeckCard;
+ std::vector<Card> _handcalcul;
+ 
 
  std::string RankString(Rank _rank)
  {
@@ -114,17 +117,28 @@ int main()
 	{
 		handTable.push_back(DrawCard());
 	}
-
+	std::cout << "---------------------carte du bot ----------------------------------------------------\n";
 	DisplayCards(handBot);
+	std::cout << "---------------------carte du joueur----------------------------------------------------\n";
 	DisplayCards(handPlayer);
+	std::cout << "---------------------carte plateau-------------------------------------------------\n";
 	DisplayCards(handTable);
-
 	std::cout << "----------------------------------------------<\n";
 	std::cout << "nombre de carte dans le deck : " << DeckCard.size() << "\n";
 	std::cout << "nombre de carte du bot : " << handBot.size() << "\n";
 	std::cout << "nombre de carte du joueur : " << handPlayer.size() << "\n";
 	std::cout << "nombre de carte pour la table : " << handTable.size() << "\n";
 	TimerStarGame();
+
+
+	const Handvalue playerValue = Evaluate(handPlayer);
+	const Handvalue BotValue = Evaluate(handBot);
+
+
+
 }
+
+
+
 
 
