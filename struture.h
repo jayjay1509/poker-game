@@ -7,16 +7,16 @@
 
 enum Rank
 {
-	two = 2,
-	three = 3,
-	four = 4,
-	five = 5,
-	six = 6,
-	seven = 7,
-	eight = 8,
-	nine = 9,
-	ten = 10,
-	jack = 11,
+	Two = 2,
+	Three = 3,
+	Four = 4,
+	Five = 5,
+	Six = 6,
+	Seven = 7,
+	Eight = 8,
+	Nine = 9,
+	Ten = 10,
+	Jack = 11,
 	Queen = 12,
 	king = 13,
 	Ace = 14,
@@ -24,10 +24,10 @@ enum Rank
 
 enum Color
 {
-	spade,
-	club,
-	heart,
-	diamond,
+	Spade,
+	Club,
+	Heart,
+	Diamond,
 };
 struct Card
 {
@@ -38,19 +38,19 @@ struct Card
 enum Handvalue
 {
 	HighCard,
-	Pair,
-	TwoPair,
-	ThreeOfAKind,
-	Straight,
-	Flush,
-	Fullhouse,
-	Four_of_a_kind,
-	StraightFlush,
-	Royal_flush,
+	Pair = 100,
+	TwoPair = 200,
+	ThreeOfAKind = 300,
+	Straight = 400,
+	Flush = 500,
+	Fullhouse = 600,
+	Four_of_a_kind = 700,
+	StraightFlush = 800,
+	Royal_flush = 900,
 };
 
 
-Handvalue Evaluate(const std::vector<Card>& _hand);
+int Evaluate(const std::vector<Card>& _hand);
 
 void TimerStarGame();
 void StarGame();
@@ -61,9 +61,20 @@ extern std::vector<Card> handPlayer;
 extern std::vector<Card> handBot;
 extern std::vector<Card> handTable;
 extern std::vector<Card> DeckCard;
-extern std::vector<Card> _handcalcul;
+extern std::vector<Card> _handcalcul;                             
 
-bool HasHighCard(const std::vector<Card>& _handcalcul);
+int HasHighCard(const std::vector<Card>& _handcalcul);
 bool HasPair(const std::vector<Card>& _handcalcul);
+bool HasTwoPair(const std::vector<Card>& _handcalcul);
+bool HasThreeOfAKind(const std::vector<Card>& _handcalcul);
+bool HasStraight(const std::vector<Card>& _handcalcul);
+bool HasFlush(const std::vector<Card>& _handcalcul);
+bool HasFullhouse(const std::vector<Card>& _handcalcul);
+bool HasFour_of_a_kind(const std::vector<Card>& _handcalcul);
+bool HasStraightFlush(const std::vector<Card>& _handcalcul);
+bool HasRoyal_flush(const std::vector<Card>& _handcalcul);
+
+
+
 
 

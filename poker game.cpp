@@ -13,41 +13,68 @@
  std::vector<Card> handTable;
  std::vector<Card> DeckCard;
  std::vector<Card> _handcalcul;
- 
+
+
+ void testCard()
+ {
+	 // Définition de neuf cartes spécifiques
+	 Card card1 = { Ace, Club };
+	 Card card2 = { king, Club };
+	 Card card3 = { Queen, Club };
+	 Card card4 = { Jack, Club };
+	 Card card5 = { Ten, Club };
+	 Card card6 = { Nine, Diamond };
+	 Card card7 = { Six, Club };
+	 Card card8 = { Six, Spade };
+	 Card card9 = { Six, Heart };
+
+	 // Ajout des cartes au vecteur testCards
+	 DeckCard.push_back(card1);
+	 DeckCard.push_back(card2);
+	 DeckCard.push_back(card3);
+	 DeckCard.push_back(card4);
+	 DeckCard.push_back(card5);
+	 DeckCard.push_back(card6);
+	 DeckCard.push_back(card7);
+	 DeckCard.push_back(card8);
+	 DeckCard.push_back(card9);
+
+ }
+
 
  std::string RankString(Rank _rank)
  {
 	 switch (_rank)
 	 {
-	 case two:
+	 case Two:
 		 return "two";
 		 break;
-	 case three:
+	 case Three:
 		 return "three";
 		 break;
-	 case four:
+	 case Four:
 		 return "four";
 		 break;
-	 case five:
+	 case Five:
 		 return "five";
 		 break;
-	 case six:
+	 case Six:
 		 return "six";
 		 break;
-	 case seven:
+	 case Seven:
 		 return "seven";
 		 break;
-	 case eight:
+	 case Eight:
 		 return "eight";
 		 break;
-	 case nine:
+	 case Nine:
 		 return "nine";
 		 break;
-	 case ten:
-		 return "ten";
+	 case Ten:
+		 return "Ten";
 		 break;
-	 case jack:
-		 return "jack";
+	 case Jack:
+		 return "Jack";
 		 break;
 	 case Queen:
 		 return "Queen";
@@ -66,16 +93,16 @@
  {
 	 switch (_Color)
 	 {
-	 case spade:
+	 case Spade:
 		 return "spade";
 		 break;
-	 case club:
+	 case Club:
 		 return "club";
 		 break;
-	 case heart:
+	 case Heart:
 		 return "heart";
 		 break;
-	 case diamond:
+	 case Diamond:
 		 return "diamond";
 		 break;
 	 default:;
@@ -99,12 +126,17 @@
 
 int main()
 {
+	//testCard();
 	Blend();
 	//StarGame();
 
 	for (int i = 0; i < 2; i++)
 	{
 	 handPlayer.push_back(DrawCard()) ;
+	}
+	for (int i = 0; i < 5; i++)
+	{
+		handTable.push_back(DrawCard());
 	}
 
 	for (int i = 0; i < 2; i++)
@@ -113,10 +145,7 @@ int main()
 		handBot.push_back(DrawCard());
 	}
 
-	for (int i = 0; i < 5; i++)
-	{
-		handTable.push_back(DrawCard());
-	}
+	
 	std::cout << "---------------------carte du bot ----------------------------------------------------\n";
 	DisplayCards(handBot);
 	std::cout << "---------------------carte du joueur----------------------------------------------------\n";
@@ -128,13 +157,29 @@ int main()
 	std::cout << "nombre de carte du bot : " << handBot.size() << "\n";
 	std::cout << "nombre de carte du joueur : " << handPlayer.size() << "\n";
 	std::cout << "nombre de carte pour la table : " << handTable.size() << "\n";
-	TimerStarGame();
+	//TimerStarGame();
 
 
-	const Handvalue playerValue = Evaluate(handPlayer);
-	const Handvalue BotValue = Evaluate(handBot);
+	 int playerValue = Evaluate(handPlayer);
+	 int BotValue = Evaluate(handBot);
 
-
+	if (playerValue < BotValue)
+	{
+		std::cout << "le bot gange avec "<< BotValue <<"\n";
+	}
+	else if  (BotValue < playerValue)
+	{
+		std::cout << " le joueuur gagne avec " << playerValue << "\n";
+	}
+	else if (playerValue == BotValue)
+	{
+		std::cout << " egaliter avec " << playerValue << "\n";
+	}
+	else
+	{
+		std::cout << " aucun gagnaint \n";
+	}
+	
 
 }
 
