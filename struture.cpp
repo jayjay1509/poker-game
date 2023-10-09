@@ -8,6 +8,8 @@
 
 #include "HandValue.h"
 
+
+
 void TimerStarGame()
 {
 	//h ttps://stackoverflow.com/questions/158585/how-do-you-add-a-timed-delay-to-a-c-program
@@ -21,6 +23,32 @@ void TimerStarGame()
 
 void StarGame()
 {
+	printf("                     /$$                              \n");
+	printf("                    | $$                              \n");
+	printf("  /$$$$$$   /$$$$$$ | $$   /$$  /$$$$$$   /$$$$$$     \n");
+	printf(" /$$__  $$ /$$__  $$| $$  /$$/ /$$__  $$ /$$__  $$    \n");
+	printf("| $$  \  $$| $$  \  $$| $$$$$$/ | $$$$$$$$| $$  \ __/    \n");
+	printf("| $$  | $$| $$  | $$| $$_  $$ | $$_____/| $$          \n");
+	printf("| $$$$$$$/|  $$$$$$/| $$ \   $$|  $$$$$$$| $$          \n");
+	printf("| $$____/  \ ______/ |__/  \ __/ \ _______/|__/          \n");
+	printf("| $$                                                  \n");
+	printf("| $$                                                  \n");
+	printf("|__/                                                  \n");
+	printf("                                                   /$$\n");
+	printf("                                                  | $$\n");
+	printf("  /$$$$$$   /$$$$$$  /$$$$$$/$$$$   /$$$$$$       | $$\n");
+	printf(" /$$__  $$ |____  $$| $$_  $$_  $$ /$$__  $$      | $$\n");
+	printf("| $$  \ $$  /$$$$$$$$| $$   $$   $$| $$$$$$$$      |__/\n");
+	printf("| $$  | $$ /$$__  $$| $$ | $$ | $$| $$_____/          \n");
+	printf("|  $$$$$$$|  $$$$$$$| $$ | $$ | $$|  $$$$$$$       /$$\n");
+	printf(" \ ____  $$ \ _______/|__/ |__/ |__/ \ _______/      |__/\n");
+	printf(" /$$  \ $$                                            \n");
+	printf("|  $$$$$$/                                            \n");
+	printf("  \______/                                             \n");
+	TimerStarGame();
+	TimerStarGame();
+	TimerStarGame();
+	TimerStarGame();
 	system("cls");
 	char firstChoise;
 	char SecondChoise;
@@ -444,4 +472,11 @@ bool HasRoyal_flush(const std::vector<Card>& _handcalcul)
 
 	}
 	return false;
+}
+
+int substract(int c, int d)
+
+{
+	return(c - d);
+
 }

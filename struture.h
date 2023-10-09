@@ -51,17 +51,24 @@ enum Handvalue
 
 
 int Evaluate(const std::vector<Card>& _hand);
-
+void Game();
 void TimerStarGame();
 void StarGame();
 void Blend();
 Card DrawCard();
+void DisplayCards(std::vector<Card> _deck);
+
+int substract(int c, int d);
+void displayPlayerCard();
 
 extern std::vector<Card> handPlayer;
 extern std::vector<Card> handBot;
 extern std::vector<Card> handTable;
 extern std::vector<Card> DeckCard;
-extern std::vector<Card> _handcalcul;                             
+extern std::vector<Card> _handcalcul;
+extern std::vector<Card> flop;
+extern std::vector<Card> turn;
+extern std::vector<Card> river;
 
 int HasHighCard(const std::vector<Card>& _handcalcul);
 bool HasPair(const std::vector<Card>& _handcalcul);
