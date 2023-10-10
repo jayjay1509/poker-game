@@ -3,7 +3,7 @@
 
 #include "struture.h"
 
-int Evaluate(const std::vector<Card>& _hand)
+int Evaluate(const std::vector<Card>& _hand) //here it is the function which evaluates which hand is the best
 {
 	std::vector<Card> _handcalcul;
 
@@ -72,7 +72,7 @@ int Evaluate(const std::vector<Card>& _hand)
 	}
 }
 
-std::map<Color, int> ColorOccurences(const std::vector<Card>& _handcalcul)
+std::map<Color, int> ColorOccurences(const std::vector<Card>& _handcalcul) // here we count to know how many colors there are of each
 {
 	std::map<enum Color, int> color_occurences;
 
@@ -91,7 +91,7 @@ std::map<Color, int> ColorOccurences(const std::vector<Card>& _handcalcul)
 	return color_occurences;
 }
 
-std::map<Rank, int> RankOccurence(const std::vector<Card>& _handcalcul)
+std::map<Rank, int> RankOccurence(const std::vector<Card>& _handcalcul) // here we count to know how many cards there are are the same
 {
 	std::map<Rank, int> rank_occurences;
 
@@ -109,6 +109,8 @@ std::map<Rank, int> RankOccurence(const std::vector<Card>& _handcalcul)
 	}
 	return rank_occurences;
 }
+
+//all there is after that are the functions to check if there is an even or double pair etc...
 
 std::vector<Rank> HandStraight(const std::vector<Card>& _handcalcul)
 {

@@ -5,7 +5,7 @@
 #include "HandValue.h"
 
 
-enum Rank
+enum Rank //here it is enum for the rank of the cards
 {
 	Two = 2,
 	Three = 3,
@@ -22,20 +22,20 @@ enum Rank
 	Ace = 14,
 };
 
-enum Color
+enum Color //here it is enum for the color of the cards
 {
 	Spade,
 	Club,
 	Heart,
 	Diamond,
 };
-struct Card
+struct Card //here we create a structure which will be the composition of the deck
 {
 	Rank rank;
 	Color color;
 };
 
-enum Handvalue
+enum Handvalue //here we define which hand has more value than the others
 {
 	HighCard,
 	Pair = 100,
@@ -49,6 +49,7 @@ enum Handvalue
 	Royal_flush = 900,
 };
 
+// all the functions and vectors are stored here so that it is accessible everywhere
 
 int Evaluate(const std::vector<Card>& _hand);
 void Game();

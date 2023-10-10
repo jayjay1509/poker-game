@@ -21,7 +21,7 @@ void TimerStarGame()
 	sleep_until(system_clock::now() + 2s);
 }
 
-void StarGame()
+void StarGame() //here is the little tutorial that launches with the deput screen
 {
 	printf("                     /$$                              \n");
 	printf("                    | $$                              \n");
@@ -106,7 +106,7 @@ void StarGame()
 		exit(0);
 	}
 }
-Card DrawCard()
+Card DrawCard() //here we create the cards, put them in the deck and mix them
 {
 	Card returncard;
 	returncard = DeckCard.at(0);
@@ -114,7 +114,7 @@ Card DrawCard()
 	return returncard;
 }
 
-void Blend()
+void Blend() //here we create the cards, put them in the deck and mix them
 {
 
 	for (int i = 2; i < 15; i++)
@@ -138,9 +138,9 @@ int substract(int c, int d)
 
 }
 
-void testCard() // fonction qui permets de cree des carte pour les test 
+void testCard() // function that allows you to create cards for testing
 {
-	// Définition de neuf cartes spécifiques
+	
 	Card card1 = { Ace, Club };
 	Card card2 = { king, Club };
 	Card card3 = { Queen, Club };
@@ -151,7 +151,7 @@ void testCard() // fonction qui permets de cree des carte pour les test
 	Card card8 = { Six, Spade };
 	Card card9 = { Six, Heart };
 
-	// Ajout des cartes au vecteur testCards
+	// Add cards to the Cards test vector
 	DeckCard.push_back(card1);
 	DeckCard.push_back(card2);
 	DeckCard.push_back(card3);
@@ -165,7 +165,7 @@ void testCard() // fonction qui permets de cree des carte pour les test
 }
 
 
-std::string RankString(Rank _rank)
+std::string RankString(Rank _rank) //here we replace values ??with letters so that the cards are more visible
 {
 	switch (_rank)
 	{
@@ -212,7 +212,7 @@ std::string RankString(Rank _rank)
 		return "mec ta foire";
 	}
 }
-std::string ColorString(Color _Color)
+std::string ColorString(Color _Color) //here we replace values ??with letters so that the cards are more visible
 {
 	switch (_Color)
 	{
@@ -232,7 +232,7 @@ std::string ColorString(Color _Color)
 		return "mec ta encore foire";
 	}
 }
-std::string cardtostring(Card _card)
+std::string cardtostring(Card _card) //here we replace values ??with letters so that the cards are more visible
 {
 	return RankString(_card.rank) + " de " + ColorString(_card.color);
 }

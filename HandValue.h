@@ -2,7 +2,7 @@
 #include <map>
 
 #include "struture.h"
-
+//here are the definitions of the entire hand comparison system
 
 struct Card;
 int HasHighCard(const std::vector<Card>& _handcalcul);
