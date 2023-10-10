@@ -127,7 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="poker game.cpp" />
+    <ClCompile Include="HandValue.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="struture.cpp" />
   </ItemGroup>
   <ItemGroup>
